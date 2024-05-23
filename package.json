@@ -5,8 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"lint": "eslint --fix --ext .js,.vue .",
-		"build": "eslint --fix --ext .js,.vue . && vite build",
+		"lint": "eslint . --fix",
+		"build": "eslint . --fix && vite build",
 		"preview": "vite preview"
 	},
 	"dependencies": {
