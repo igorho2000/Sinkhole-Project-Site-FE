@@ -20,6 +20,8 @@ onBeforeMount(() => {
 		appStore.isNarrowDevice = true;
 	}
 
+	appStore.stopDistance = window.innerHeight;
+
 	window.addEventListener("resize", () => {
 		let vh = window.innerHeight * 0.01;
 		let vw = window.innerWidth;
@@ -31,6 +33,8 @@ onBeforeMount(() => {
 		} else {
 			appStore.isNarrowDevice = false;
 		}
+
+		appStore.stopDistance = window.innerHeight;
 	});
 });
 onMounted(() => {
@@ -41,7 +45,13 @@ onMounted(() => {
 </script>
 
 <template>
-	<router-view> </router-view>
+	<div class="app-wrapper">
+		<router-view> </router-view>
+	</div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.app-wrapper {
+	width: min(100%, 1440px);
+}
+</style>

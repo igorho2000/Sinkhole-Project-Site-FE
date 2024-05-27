@@ -2,12 +2,18 @@
 
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../views/HomePage.vue";
+import MainPage from "../views/MainPage.vue";
 
 const routes = [
 	{
 		path: "/",
 		name: "home",
 		component: HomePage,
+	},
+	{
+		path: "/article",
+		name: "article",
+		component: MainPage,
 	},
 	{
 		path: "/:pathMatch(.*)*",

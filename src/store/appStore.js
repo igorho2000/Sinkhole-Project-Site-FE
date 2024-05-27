@@ -6,6 +6,7 @@ export const useAppStore = defineStore("app", {
 		isFirstTime: localStorage.getItem("first") || true,
 		isMobileDevice: false,
 		isNarrowDevice: false,
+		stopDistance: 700,
 	}),
 	getters: {},
 	actions: {

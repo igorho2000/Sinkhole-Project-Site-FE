@@ -1,11 +1,10 @@
 <script setup></script>
 
 <template>
-	<div class="homepage">Hello</div>
+	<div class="sidebar"></div>
 </template>
 
 <style scoped lang="scss">
-.homepage {
-	height: 3000px;
+.sidebar {
 }
 </style>

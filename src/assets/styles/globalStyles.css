@@ -1,14 +1,13 @@
 /* Cleaned */
 
 :root {
-	--color-background: #090909;
-	--color-border: #494b4e;
-	--color-highlight: #5a9cf8;
-	--color-normal-text: white;
-	--color-complement-text: #888787;
-	--color-component-background: #282a2c;
-	--color-overlay: rgba(0, 0, 0, 0.65);
+	--color-background: #e1e1df;
+	--color-border: #555555;
+	--color-mirror: rgba(255, 255, 255, 0.1);
+	--color-overlay: rgba(0, 0, 0, 0.45);
 	--color-track-items: rgba(106, 106, 106, 0.75);
+	--color-gradient: linear-gradient(90deg, #d9d9d9, #737373);
+	--color-gradient-reverse: linear-gradient(90deg, #737373, #d9d9d9);
 	--font-to-icon: 1.2;
 	--font-xl: 1.5rem;
 	--font-l: 1.25rem;
@@ -21,8 +20,18 @@
 * {
 	margin: 0;
 	padding: 0;
-	color: var(--color-normal-text);
+	color: black;
 	font-family: "Noto Serif TC", serif;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+#app {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow-y: scroll;
 }
 
 h1 {
@@ -49,7 +58,7 @@ button {
 	transition: text-shadow 0.2s, box-shadow 0.2s, opacity 0.2s,
 		background-color 0.2s;
 }
-button span {
+span {
 	font-family: var(--font-icon);
 }
 button span:hover {
@@ -57,26 +66,13 @@ button span:hover {
 	text-shadow: var(--color-border) 0px 0px 6px;
 }
 
-input {
-	padding: 4px 6px;
-	border-radius: 5px;
-	border: solid 1px var(--color-border);
-	background-color: transparent;
-	font-size: 1rem;
-}
-
-input:focus {
-	outline: none;
-	border-color: var(--color-highlight);
-}
-
 body {
 	background-color: var(--color-background);
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
 	width: 0px;
-}
+} */
 
 @media (min-width: 1000px) {
 	.show-if-mobile {
