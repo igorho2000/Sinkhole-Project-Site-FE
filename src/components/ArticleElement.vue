@@ -69,7 +69,7 @@ const moreStepsAfter = computed(() => {
 	transform: translateY(-50%);
 	transition: top 0.4s ease-in-out, background-color 0.4s ease-in-out;
 
-	@media (max-width: 1000px) {
+	@media (max-width: 1025px) {
 		width: 90vw;
 	}
 }

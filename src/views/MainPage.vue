@@ -76,7 +76,9 @@ onUnmounted(() => {
 		&-sidebar {
 			width: 400px;
 			height: 100%;
-			background-color: blue;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
 		&-articles {
@@ -86,11 +88,11 @@ onUnmounted(() => {
 			overflow-y: hidden;
 		}
 
-		@media (max-width: 1000px) {
+		@media (max-width: 1025px) {
 			left: 5vw;
-			width: 190vw;
+			width: 200vw;
 			transform: none;
-			column-gap: 5vw;
+			column-gap: 8vw;
 
 			&:hover {
 				left: -95vw;
@@ -107,6 +109,10 @@ onUnmounted(() => {
 				min-width: 90vw;
 				width: 90vw;
 			}
+		}
+
+		@media (max-width: 760px) {
+			column-gap: calc(8vw - 8px);
 		}
 	}
 }
