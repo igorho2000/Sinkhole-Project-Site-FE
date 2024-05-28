@@ -1,8 +1,12 @@
 <script setup>
 import { computed } from "vue";
 import { useAppStore } from "../store/appStore";
+import { useI18n } from "vue-i18n";
+
+const { BASE_URL } = import.meta.env;
 
 const appStore = useAppStore();
+const { t } = useI18n();
 
 const props = defineProps(["position", "index", "content"]);
 
@@ -53,8 +57,40 @@ function handleReturn() {
 			zIndex: 100 - index,
 		}"
 	>
-		<button @click="handleReturn">Back</button>
-		{{ index }}
+		<div
+			class="articleelement-header"
+			:style="{
+				backgroundImage: `url('${BASE_URL}/src/assets/images/${content.title}-header.png')`,
+			}"
+		>
+			<div class="articleelement-header-content">
+				<button @click="handleReturn">
+					<span>arrow_back_ios</span>
+				</button>
+				<h3>{{ t(`${content.title}.subtitle`) }}</h3>
+				<h2>{{ t(`${content.title}.maintitle`) }}</h2>
+			</div>
+		</div>
+		<div class="articleelement-content">
+			<div
+				v-for="(sec, index) of content.content"
+				:key="`${content.title}-sec-${index + 1}`"
+			>
+				<p v-if="sec === 'text'">
+					{{ t(`${content.title}.text${index + 1}`) }}
+				</p>
+				<img
+					v-else-if="sec === 'img'"
+					:src="`${BASE_URL}/src/assets/images/${content.title}-${
+						index + 1
+					}.png`"
+				/>
+				<div v-else-if="sec === 'caption'">
+					<p>{{ t(`${content.title}.captiontitle${index + 1}`) }}</p>
+					<p>{{ t(`${content.title}.captiontext${index + 1}`) }}</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -66,8 +102,7 @@ function handleReturn() {
 	width: calc(100% - 2 * var(--font-m));
 	height: 80vh;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: column;
 	background-color: white;
 	border-radius: var(--font-l);
 	box-shadow: var(--color-border) 0px 0px var(--font-m);
@@ -76,6 +111,136 @@ function handleReturn() {
 
 	@media (max-width: 1025px) {
 		width: 90vw;
+	}
+
+	h2,
+	h3 {
+		color: white;
+	}
+
+	&-header {
+		width: 100%;
+		height: 30%;
+		background-color: var(--color-border);
+		background-size: cover;
+		background-position: center;
+
+		&-content {
+			width: calc(100% - 4rem);
+			height: calc(100% - 2rem);
+			background-color: var(--color-overlay);
+			padding: 1rem 2rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+
+			button {
+				display: none;
+				span {
+					font-size: var(--font-xl);
+					color: white;
+				}
+			}
+
+			h2 {
+				font-size: 3rem;
+			}
+
+			h3 {
+				font-size: var(--font-xl);
+				margin-bottom: 0.5rem;
+			}
+
+			@media (max-width: 1025px) {
+				button {
+					position: absolute;
+					top: 1rem;
+					left: 1.25rem;
+					display: flex;
+				}
+			}
+
+			@media (max-width: 750px) {
+				padding: 0.5rem 1rem;
+				width: calc(100% - 2rem);
+				height: calc(100% - 1rem);
+
+				button {
+					position: absolute;
+					top: 0.75rem;
+					left: 0.5rem;
+					display: flex;
+				}
+
+				h2 {
+					font-size: 1.75rem;
+				}
+
+				h3 {
+					font-size: var(--font-l);
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&-content {
+		width: calc(100% - 4rem);
+		height: calc(70% - 4rem);
+		margin: 2rem;
+		overflow-y: auto;
+
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: var(--color-border);
+			border-radius: 6px;
+		}
+		&::-webkit-scrollbar-track {
+			background-color: #a1a1a1;
+			border-radius: 6px;
+		}
+
+		> div {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 1.5rem;
+
+			p {
+				font-size: var(--font-m);
+				line-height: 1.5;
+			}
+
+			img {
+				width: min(600px, 100%);
+				align-self: center;
+			}
+
+			div {
+				align-self: center;
+				max-width: min(400px, 100%);
+
+				p {
+					font-size: var(--font-s);
+					text-align: center;
+
+					&:first-child {
+						font-weight: 700;
+					}
+				}
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@media (max-width: 750px) {
+			width: calc(100% - 2rem);
+			height: calc(70% - 2rem);
+			margin: 1rem;
+		}
 	}
 }
 
