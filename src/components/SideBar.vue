@@ -5,6 +5,7 @@ import { useAppStore } from "../store/appStore";
 
 import { articles } from "../assets/articles";
 import { RouterLink } from "vue-router";
+import TranslateButton from "./TranslateButton.vue";
 
 const { t } = useI18n();
 const appStore = useAppStore();
@@ -42,7 +43,6 @@ function handleClickArticle(title) {
 			appStore.stopDistance *
 				articles.findIndex((article) => article.title === title) +
 			10,
-		behavior: "smooth",
 	});
 	appStore.articleMode = true;
 }
@@ -171,11 +171,15 @@ function handleClickArticle(title) {
 				</div>
 			</div>
 		</div>
-		<div class="sidebar-controls">
+		<div
+			:class="{
+				'sidebar-controls': true,
+			}"
+		>
 			<RouterLink to="/"><span>home</span></RouterLink>
-			<button><span>home</span></button>
-			<button><span>home</span></button>
-			<button><span>home</span></button>
+			<!-- <button><span>home</span></button>
+			<button><span>home</span></button> -->
+			<TranslateButton :dark="true" />
 		</div>
 	</div>
 </template>
@@ -382,13 +386,16 @@ function handleClickArticle(title) {
 		left: 50%;
 		display: flex;
 		justify-content: center;
+		align-items: center;
 		column-gap: var(--font-xl);
 		padding: var(--font-l) 0 var(--font-xl);
 		background-color: var(--color-background);
 		transform: translateX(-50%);
+		overflow: hidden;
 
 		button,
 		a {
+			height: var(--font-xl);
 			span {
 				font-size: var(--font-xl);
 			}
