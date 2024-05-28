@@ -6,12 +6,13 @@
 	--color-mirror: rgba(255, 255, 255, 0.1);
 	--color-overlay: rgba(0, 0, 0, 0.45);
 	--color-track-items: rgba(106, 106, 106, 0.75);
-	--color-gradient: linear-gradient(90deg, #d9d9d9, #737373);
+	--color-gradient: linear-gradient(180deg, #d9d9d9, 30%, #737373);
 	--color-gradient-reverse: linear-gradient(90deg, #737373, #d9d9d9);
 	--font-to-icon: 1.2;
 	--font-xl: 1.5rem;
 	--font-l: 1.25rem;
-	--font-m: 1rem;
+	--font-m: 18px;
+	--font-ms: 1rem;
 	--font-s: 0.75rem;
 	--font-icon: "Material Icons Round";
 	--vh: 1vh;

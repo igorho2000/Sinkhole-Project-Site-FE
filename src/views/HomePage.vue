@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const page = ref(1);
+</script>
 
 <template>
-	<div class="homepage">Hello</div>
+	<RouterLink to="/article" class="homepage">To Articles</RouterLink>
 </template>
 
 <style scoped lang="scss">

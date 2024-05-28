@@ -7,6 +7,8 @@ export const useAppStore = defineStore("app", {
 		isMobileDevice: false,
 		isNarrowDevice: false,
 		stopDistance: 700,
+		articleMode: false,
+		showAnimation: false,
 	}),
 	getters: {},
 	actions: {

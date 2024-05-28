@@ -15,4 +15,7 @@ export const ch = {
 		space: "空間",
 		spacedesc: "的篩選、研究方法的進行等內容，幫助讀者快速了解數據。",
 	},
+	definition: {
+		title: "定義目標案件",
+	},
 };

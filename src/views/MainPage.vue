@@ -33,7 +33,12 @@ onUnmounted(() => {
 			}px)`,
 		}"
 	>
-		<div class="mainpage-positioner">
+		<div
+			:class="{
+				'mainpage-positioner': true,
+				articlemode: appStore.articleMode,
+			}"
+		>
 			<div class="mainpage-positioner-sidebar">
 				<SideBar :position="position" />
 			</div>
@@ -94,7 +99,7 @@ onUnmounted(() => {
 			transform: none;
 			column-gap: 8vw;
 
-			&:hover {
+			&.articlemode {
 				left: -95vw;
 			}
 

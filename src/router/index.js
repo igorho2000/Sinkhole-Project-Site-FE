@@ -1,6 +1,8 @@
 // Cleaned
 
 import { createRouter, createWebHistory } from "vue-router";
+import { useAppStore } from "../store/appStore";
+
 import HomePage from "../views/HomePage.vue";
 import MainPage from "../views/MainPage.vue";
 
@@ -26,6 +28,22 @@ const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	base: import.meta.env.BASE_URL,
 	routes,
+});
+
+router.beforeEach((to, from, next) => {
+	const appStore = useAppStore();
+
+	if (from.name) {
+		appStore.showAnimation = true;
+		setTimeout(() => {
+			next();
+		}, 1500);
+		setTimeout(() => {
+			appStore.showAnimation = false;
+		}, 1920);
+	} else {
+		next();
+	}
 });
 
 export default router;

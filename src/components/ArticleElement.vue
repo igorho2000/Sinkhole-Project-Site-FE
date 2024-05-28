@@ -34,6 +34,10 @@ const oneStepAfter = computed(() => {
 const moreStepsAfter = computed(() => {
 	return props.position > appStore.stopDistance * (props.index + 2);
 });
+
+function handleReturn() {
+	appStore.articleMode = false;
+}
 </script>
 
 <template>
@@ -49,6 +53,7 @@ const moreStepsAfter = computed(() => {
 			zIndex: 100 - index,
 		}"
 	>
+		<button @click="handleReturn">Back</button>
 		{{ index }}
 	</div>
 </template>

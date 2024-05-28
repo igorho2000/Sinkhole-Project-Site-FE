@@ -3,6 +3,7 @@ import { onBeforeMount, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 import { RouterView } from "vue-router";
 import { useAppStore } from "./store/appStore";
+import AnimationOverlay from "./components/AnimationOverlay.vue";
 
 const { locale } = useI18n();
 
@@ -16,7 +17,7 @@ onBeforeMount(() => {
 
 	document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-	if (vw < 760) {
+	if (vw < 1025) {
 		appStore.isNarrowDevice = true;
 	}
 
@@ -28,7 +29,7 @@ onBeforeMount(() => {
 
 		document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-		if (vw < 760) {
+		if (vw < 1025) {
 			appStore.isNarrowDevice = true;
 		} else {
 			appStore.isNarrowDevice = false;
@@ -47,6 +48,7 @@ onMounted(() => {
 <template>
 	<div class="app-wrapper">
 		<router-view> </router-view>
+		<AnimationOverlay />
 	</div>
 </template>
 
