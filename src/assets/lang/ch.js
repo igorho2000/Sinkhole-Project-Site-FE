@@ -20,7 +20,7 @@ export const ch = {
 	sidebar: {
 		title: "相關成因",
 		subtitle:
-			"造成致災性的道路塌陷，成因有以下這些：造成致災性的道路塌陷，成因有以下這些：",
+			"造成致災性的道路塌陷，成因大致可分為二個面向：時間與空間",
 		cause: "有影響",
 		nocause: "無影響",
 	},
@@ -63,7 +63,7 @@ export const ch = {
 	},
 	credits: {
 		open: "成果開源",
-		description: "更好的台北，更好的明天。更好的台北，更好的明天。",
+		description: "透過數據，打造更好的明日臺北。",
 		team: "團隊名單",
 		data: "使用資料集",
 		"team-1": "資料分析＿＿＿＿＿Iima Yu",
