@@ -46,10 +46,10 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="app-wrapper">
-		<router-view> </router-view>
-		<AnimationOverlay />
-	</div>
+  <div class="app-wrapper">
+    <router-view />
+    <AnimationOverlay />
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -9,55 +9,55 @@ import SideBar from "../components/SideBar.vue";
 const appStore = useAppStore();
 const position = ref(0);
 
-function handleScroll(e) {
+function handleScroll() {
 	position.value = Math.round(window.scrollY);
 }
 
 onMounted(() => {
-	document.addEventListener("scroll", (e) => handleScroll(e));
+	document.addEventListener("scroll", (e) => handleScroll());
 });
 onUnmounted(() => {
-	document.removeEventListener("scroll", (e) => handleScroll(e));
+	document.removeEventListener("scroll", (e) => handleScroll());
 });
 </script>
 
 <template>
-	<div
-		class="mainpage"
-		:style="{
-			height: `calc(100vh + ${
-				(articles.length + 1) * appStore.stopDistance
-			}px)`,
-			height: `calc(var(--vh) * 100 + ${
-				(articles.length + 1) * appStore.stopDistance
-			}px)`,
-		}"
-	>
-		<div
-			:class="{
-				'mainpage-positioner': true,
-				articlemode: appStore.articleMode,
-			}"
-		>
-			<div class="mainpage-positioner-sidebar">
-				<SideBar :position="position" />
-			</div>
-			<div class="mainpage-positioner-articles">
-				<ArticleElement
-					v-for="(article, index) in articles"
-					:position="position"
-					:index="index"
-					:content="article"
-					:key="`${article.section}-${article.title}`"
-				/>
-				<ArticleElement
-					:position="position"
-					:index="articles.length"
-					:content="{ title: 'credit' }"
-				/>
-			</div>
-		</div>
-	</div>
+  <div
+    class="mainpage"
+    :style="{
+      height: `calc(100vh + ${
+        (articles.length + 1) * appStore.stopDistance
+      }px)`,
+      height: `calc(var(--vh) * 100 + ${
+        (articles.length + 1) * appStore.stopDistance
+      }px)`,
+    }"
+  >
+    <div
+      :class="{
+        'mainpage-positioner': true,
+        articlemode: appStore.articleMode,
+      }"
+    >
+      <div class="mainpage-positioner-sidebar">
+        <SideBar :position="position" />
+      </div>
+      <div class="mainpage-positioner-articles">
+        <ArticleElement
+          v-for="(article, index) in articles"
+          :key="`${article.section}-${article.title}`"
+          :position="position"
+          :index="index"
+          :content="article"
+        />
+        <ArticleElement
+          :position="position"
+          :index="articles.length"
+          :content="{ title: 'credit' }"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped lang="scss">

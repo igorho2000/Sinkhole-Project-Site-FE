@@ -71,9 +71,21 @@ body {
 	background-color: var(--color-background);
 }
 
-/* ::-webkit-scrollbar {
+body::-webkit-scrollbar {
+	width: 6px;
+}
+body::-webkit-scrollbar-thumb {
+	background-color: var(--color-border);
+	border-radius: 6px;
+}
+body::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0);
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar {
 	width: 0px;
-} */
+}
 
 @media (min-width: 1000px) {
 	.show-if-mobile {

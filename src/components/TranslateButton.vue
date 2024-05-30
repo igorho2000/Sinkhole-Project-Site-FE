@@ -2,7 +2,7 @@
 import { useI18n } from "vue-i18n";
 import { useAppStore } from "../store/appStore";
 
-const props = defineProps(["dark"]);
+defineProps(["dark"]);
 
 const { t, locale } = useI18n();
 const appStore = useAppStore();
@@ -16,12 +16,12 @@ function toggleLang() {
 </script>
 
 <template>
-	<button
-		@click="toggleLang"
-		:class="{ translatebutton: true, 'translatebutton-dark': dark }"
-	>
-		{{ t("oppositeLanguage") }}
-	</button>
+  <button
+    :class="{ translatebutton: true, 'translatebutton-dark': dark }"
+    @click="toggleLang"
+  >
+    {{ t("oppositeLanguage") }}
+  </button>
 </template>
 
 <style scoped lang="scss">

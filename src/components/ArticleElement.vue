@@ -45,155 +45,166 @@ function handleReturn() {
 </script>
 
 <template>
-	<div
-		:class="{
-			articleelement: true,
-			onestepbefore: oneStepBefore,
-			onestepafter: oneStepAfter,
-			morestepsbefore: !active && moreStepsBefore,
-			morestepsafter: !active && moreStepsAfter,
-			credit: content.title === 'credit',
-		}"
-		:style="{
-			zIndex: 100 - index,
-		}"
-	>
-		<div
-			class="articleelement-header"
-			:style="{
-				backgroundImage: `url('${BASE_URL}/src/assets/images/${content.title}-header.png')`,
-			}"
-			v-if="content.title !== 'credit'"
-		>
-			<div class="articleelement-header-content">
-				<button @click="handleReturn">
-					<span>arrow_back_ios</span>
-				</button>
-				<h3>{{ t(`${content.title}.subtitle`) }}</h3>
-				<h2>{{ t(`${content.title}.maintitle`) }}</h2>
-			</div>
-		</div>
-		<div class="articleelement-content" v-if="content.title !== 'credit'">
-			<div
-				v-for="(sec, index) of content.content"
-				:key="`${content.title}-sec-${index + 1}`"
-			>
-				<p v-if="sec === 'text'">
-					{{ t(`${content.title}.text${index + 1}`) }}
-				</p>
-				<img
-					class="img"
-					v-else-if="sec === 'img'"
-					:src="`${BASE_URL}/src/assets/images/${content.title}-${
-						index + 1
-					}.png`"
-				/>
-				<div v-else-if="sec === 'caption'" class="caption">
-					<p>{{ t(`${content.title}.captiontitle${index + 1}`) }}</p>
-					<p>{{ t(`${content.title}.captiontext${index + 1}`) }}</p>
-				</div>
-				<div v-else-if="sec === 'dbimg'" class="dbimg">
-					<img
-						:src="`${BASE_URL}/src/assets/images/${content.title}-${
-							index + 1
-						}-1.png`"
-					/>
-					<img
-						:src="`${BASE_URL}/src/assets/images/${content.title}-${
-							index + 1
-						}-2.png`"
-					/>
-				</div>
-				<div v-else-if="sec === 'dbimgcaption'" class="dbimg">
-					<div>
-						<img
-							:src="`${BASE_URL}/src/assets/images/${
-								content.title
-							}-${index + 1}-1.png`"
-						/>
-						<div class="caption">
-							<p>
-								{{
-									t(
-										`${content.title}.captiontitle${
-											index + 1
-										}-1`
-									)
-								}}
-							</p>
-							<p>
-								{{
-									t(
-										`${content.title}.captiontext${
-											index + 1
-										}-1`
-									)
-								}}
-							</p>
-						</div>
-					</div>
-					<div>
-						<img
-							:src="`${BASE_URL}/src/assets/images/${
-								content.title
-							}-${index + 1}-2.png`"
-						/>
-						<div class="caption">
-							<p>
-								{{
-									t(
-										`${content.title}.captiontitle${
-											index + 1
-										}-2`
-									)
-								}}
-							</p>
-							<p>
-								{{
-									t(
-										`${content.title}.captiontext${
-											index + 1
-										}-2`
-									)
-								}}
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div v-else class="articleelement-credit">
-			<!-- <h2>
-				<button @click="handleReturn">
-					<span>arrow_back_ios</span></button
-				>{{ t("credits.open") }}
-			</h2> -->
-			<h3>{{ t("credits.description") }}</h3>
-			<div class="articleelement-credit-positioner">
-				<div>
-					<h3>{{ t("credits.team") }}</h3>
-					<p>{{ t("credits.team-1") }}</p>
-					<p>{{ t("credits.team-2") }}</p>
-					<p>{{ t("credits.team-3") }}</p>
-					<p>{{ t("credits.team-4") }}</p>
-					<p>{{ t("credits.team-5") }}</p>
-					<p>{{ t("credits.team-6") }}</p>
-				</div>
-				<a
-					href="https://projectonepremium.com"
-					target="_blank"
-					rel="noreferrer"
-					><span>north_east</span>{{ t("credits.data") }}</a
-				>
-				<a
-					href="https://projectonepremium.com"
-					target="_blank"
-					rel="noreferrer"
-					><span>north_east</span>GitHub</a
-				>
-			</div>
-		</div>
-	</div>
+  <div
+    :class="{
+      articleelement: true,
+      onestepbefore: oneStepBefore,
+      onestepafter: oneStepAfter,
+      morestepsbefore: !active && moreStepsBefore,
+      morestepsafter: !active && moreStepsAfter,
+      credit: content.title === 'credit',
+    }"
+    :style="{
+      zIndex: 100 - index,
+    }"
+  >
+    <div
+      v-if="content.title !== 'credit'"
+      class="articleelement-header"
+      :style="{
+        backgroundImage: `url('${BASE_URL}images/${content.title}-header.png')`,
+      }"
+    >
+      <div class="articleelement-header-content">
+        <button @click="handleReturn">
+          <span>arrow_back_ios</span>
+        </button>
+        <h3>{{ t(`${content.title}.subtitle`) }}</h3>
+        <h2>{{ t(`${content.title}.maintitle`) }}</h2>
+      </div>
+    </div>
+    <div
+      v-if="content.title !== 'credit'"
+      class="articleelement-content"
+    >
+      <div
+        v-for="(sec, index) of content.content"
+        :key="`${content.title}-sec-${index + 1}`"
+      >
+        <p v-if="sec === 'text'">
+          {{ t(`${content.title}.text${index + 1}`) }}
+        </p>
+        <img
+          v-else-if="sec === 'img'"
+          class="img"
+          :src="`${BASE_URL}images/${content.title}-${index + 1}.png`"
+        >
+        <div
+          v-else-if="sec === 'caption'"
+          class="caption"
+        >
+          <p>{{ t(`${content.title}.captiontitle${index + 1}`) }}</p>
+          <p>{{ t(`${content.title}.captiontext${index + 1}`) }}</p>
+        </div>
+        <div
+          v-else-if="sec === 'dbimg'"
+          class="dbimg"
+        >
+          <img
+            :src="`${BASE_URL}images/${content.title}-${
+              index + 1
+            }-1.png`"
+          >
+          <img
+            :src="`${BASE_URL}images/${content.title}-${
+              index + 1
+            }-2.png`"
+          >
+        </div>
+        <div
+          v-else-if="sec === 'dbimgcaption'"
+          class="dbimg"
+        >
+          <div>
+            <img
+              :src="`${BASE_URL}images/${content.title}-${
+                index + 1
+              }-1.png`"
+            >
+            <div class="caption">
+              <p>
+                {{
+                  t(
+                    `${content.title}.captiontitle${
+                      index + 1
+                    }-1`
+                  )
+                }}
+              </p>
+              <p>
+                {{
+                  t(
+                    `${content.title}.captiontext${
+                      index + 1
+                    }-1`
+                  )
+                }}
+              </p>
+            </div>
+          </div>
+          <div>
+            <img
+              :src="`${BASE_URL}images/${content.title}-${
+                index + 1
+              }-2.png`"
+            >
+            <div class="caption">
+              <p>
+                {{
+                  t(
+                    `${content.title}.captiontitle${
+                      index + 1
+                    }-2`
+                  )
+                }}
+              </p>
+              <p>
+                {{
+                  t(
+                    `${content.title}.captiontext${
+                      index + 1
+                    }-2`
+                  )
+                }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      v-else
+      class="articleelement-credit"
+    >
+      <h2>
+        <button @click="handleReturn">
+          <span>arrow_back_ios</span>
+        </button>{{ t("credits.open") }}
+      </h2>
+      <h3>{{ t("credits.description") }}</h3>
+      <div class="articleelement-credit-positioner">
+        <div>
+          <h3>{{ t("credits.team") }}</h3>
+          <p>{{ t("credits.team-1") }}</p>
+          <p>{{ t("credits.team-2") }}</p>
+          <p>{{ t("credits.team-3") }}</p>
+          <p>{{ t("credits.team-4") }}</p>
+          <p>{{ t("credits.team-5") }}</p>
+          <p>{{ t("credits.team-6") }}</p>
+        </div>
+        <a
+          href="https://projectonepremium.com"
+          target="_blank"
+          rel="noreferrer"
+        ><span>north_east</span>{{ t("credits.data") }}</a>
+        <a
+          href="https://projectonepremium.com"
+          target="_blank"
+          rel="noreferrer"
+        ><span>north_east</span>GitHub</a>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -202,7 +213,7 @@ function handleReturn() {
 	left: var(--font-m);
 	top: 50%;
 	width: calc(100% - 2 * var(--font-m));
-	height: 80vh;
+	height: 80%;
 	display: flex;
 	flex-direction: column;
 	background-color: white;
@@ -263,16 +274,18 @@ function handleReturn() {
 			}
 
 			@media (max-width: 750px) {
-				padding: 0.5rem 1rem;
-				width: calc(100% - 2rem);
-				height: calc(100% - 1rem);
-
 				button {
 					position: absolute;
 					top: 0.75rem;
 					left: 0.5rem;
 					display: flex;
 				}
+			}
+
+			@media (max-width: 750px), (max-height: 750px) {
+				padding: 0.5rem 1rem;
+				width: calc(100% - 2rem);
+				height: calc(100% - 1rem);
 
 				h2 {
 					font-size: 1.75rem;
@@ -300,7 +313,7 @@ function handleReturn() {
 			border-radius: 6px;
 		}
 		&::-webkit-scrollbar-track {
-			background-color: #a1a1a1;
+			background-color: rgba(0, 0, 0, 0);
 			border-radius: 6px;
 		}
 
@@ -474,6 +487,40 @@ function handleReturn() {
 				button {
 					display: block;
 				}
+			}
+		}
+
+		@media (max-width: 750px), (max-height: 750px) {
+			h2 {
+				font-size: 2rem;
+			}
+
+			> h3 {
+				font-size: var(--font-m);
+			}
+			&-positioner > div:first-child {
+				grid-area: one;
+				padding: 1rem;
+				border-radius: 1rem;
+				border: 2px solid var(--color-border);
+				background-color: var(--color-background);
+				overflow: hidden;
+
+				h3 {
+					font-size: var(--font-m);
+					font-weight: 700;
+					color: black;
+					margin-bottom: 1rem;
+				}
+
+				p {
+					font-size: var(--font-s);
+					line-height: 1.5;
+				}
+			}
+
+			a {
+				font-size: var(--font-m);
 			}
 		}
 	}

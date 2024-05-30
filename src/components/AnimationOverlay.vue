@@ -5,17 +5,20 @@ const appStore = useAppStore();
 </script>
 
 <template>
-	<Teleport to="body">
-		<Transition name="fade">
-			<div class="animationoverlay" v-if="appStore.showAnimation">
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
-		</Transition>
-	</Teleport>
+  <Teleport to="body">
+    <Transition name="fade">
+      <div
+        v-if="appStore.showAnimation"
+        class="animationoverlay"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </Transition>
+  </Teleport>
 </template>
 
 <style scoped lang="scss">
