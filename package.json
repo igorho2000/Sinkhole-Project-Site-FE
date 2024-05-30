@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"lint": "eslint . --fix",
-		"build": "eslint . --fix && vite build && firebase deploy",
+		"build": "eslint . --fix && vite build",
 		"preview": "vite preview"
 	},
 	"dependencies": {
