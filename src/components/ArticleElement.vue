@@ -213,7 +213,7 @@ function handleReturn() {
 	left: var(--font-m);
 	top: 50%;
 	width: calc(100% - 2 * var(--font-m));
-	height: 80vh;
+	height: 80%;
 	display: flex;
 	flex-direction: column;
 	background-color: white;
