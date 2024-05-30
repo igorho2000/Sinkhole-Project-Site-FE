@@ -26,11 +26,11 @@ export const ch = {
 	},
 	sections: {
 		overview: "概要",
-		overviewdesc: "的篩選、研究方法的進行等內容，幫助讀者快速了解數據。",
+		overviewdesc: "如何從資料辨識潛在掏空案件，以及進行後續變因的探討。",
 		time: "時間",
-		timedesc: "的篩選、研究方法的進行等內容，幫助讀者快速了解數據。",
+		timedesc: "時間上的潛在影響因素，如降雨、地震發生數量、潮汐等。",
 		space: "空間",
-		spacedesc: "的篩選、研究方法的進行等內容，幫助讀者快速了解數據。",
+		spacedesc: "空間上的潛在影響因素，如土壤液化、建案、離河遠近等。",
 	},
 	definition: {
 		title: "定義目標案件",
