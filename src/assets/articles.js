@@ -127,14 +127,6 @@ export const articles = [
 		isCause: false,
 		content: ["text", "text", "img", "caption"],
 	},
-	{
-		section: "space",
-		type: "article",
-		title: "definition-17",
-		icon: "forest",
-		isCause: false,
-		content: ["text", "text", "img", "caption"],
-	},
 ];
 
 /* 

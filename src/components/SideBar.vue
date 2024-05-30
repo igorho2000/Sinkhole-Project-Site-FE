@@ -71,7 +71,7 @@ function handleClickArticle(title) {
               <span>add</span>
             </button>
           </div>
-          <p>
+          <p v-if="open === 'overview'">
             {{ t("sections.overviewdesc") }}
           </p>
           <div
