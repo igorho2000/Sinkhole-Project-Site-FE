@@ -176,11 +176,11 @@ function handleReturn() {
       v-else
       class="articleelement-credit"
     >
-      <h2>
+      <!-- <h2>
         <button @click="handleReturn">
           <span>arrow_back_ios</span>
         </button>{{ t("credits.open") }}
-      </h2>
+      </h2> -->
       <h3>{{ t("credits.description") }}</h3>
       <div class="articleelement-credit-positioner">
         <div>
