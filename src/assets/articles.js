@@ -50,11 +50,11 @@ content 種類:
 - text: 
 	需到 /lang/ch.js 該文章 object 中填文字，key 為 text[在content的順序]
 - img: 
-	需到 /images 加入圖片，檔名為 [文章title]-[在content的順序].png
+	需到 public/images 加入圖片，檔名為 [文章title]-[在content的順序].png
 - caption: 
 	需到 /lang/ch.js 填圖片 caption，key 為 captiontitle[在content的順序] & captiontext[在content的順序]
 - dbimg: 
-	需到 /images 加入圖片，檔名為 [文章title]-[在content的順序]-1.png & [文章title]-[在content的順序]-2.png
+	需到 public/images 加入圖片，檔名為 [文章title]-[在content的順序]-1.png & [文章title]-[在content的順序]-2.png
 - dbimgcaption: 
 	需按照 dbimg 步驟加入圖片，並到 /lang/ch.js 填圖片 caption，
 	key 為 captiontitle[在content的順序]-1 & captiontext[在content的順序]-1 & 

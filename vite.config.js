@@ -4,5 +4,8 @@ import vue from "@vitejs/plugin-vue";
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [vue()],
-	base: "/sinkhole",
+	optimizeDeps: {
+		include: ["./assets/**/*.{jpg,png,gif,svg}"],
+	},
+	// base: "/sinkhole",
 });

@@ -31,7 +31,7 @@ export default [
 			"prefer-destructuring": ["error", { object: true, array: false }],
 			"no-unused-vars": [
 				"error",
-				{ argsIgnorePattern: "req|res|next|val|err" },
+				{ argsIgnorePattern: "req|res|next|val|err|e" },
 			],
 			"vue/no-setup-props-destructure": "off",
 			"vue/prop-name-casing": "off",
