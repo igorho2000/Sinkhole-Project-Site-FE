@@ -16,20 +16,12 @@ export const articles = [
 		content: ["text", "text", "dbimg"],
 	},
 	{
-		section: "overview",
-		type: "article",
-		title: "definition-5",
-		icon: "forest",
-		isCause: true,
-		content: ["text", "dbimgcaption", "text"],
-	},
-	{
 		section: "time",
 		type: "article",
 		title: "definition-3",
 		icon: "forest",
 		isCause: true,
-		content: ["text", "text", "img", "caption"],
+		content: ["text", "text", "img"],
 	},
 	{
 		section: "space",
