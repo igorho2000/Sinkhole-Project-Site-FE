@@ -395,6 +395,7 @@ function handleClickArticle(title) {
 
 		button,
 		a {
+			overflow: hidden;
 			height: var(--font-xl);
 			span {
 				font-size: var(--font-xl);

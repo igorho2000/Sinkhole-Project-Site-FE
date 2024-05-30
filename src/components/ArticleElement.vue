@@ -52,6 +52,7 @@ function handleReturn() {
 			onestepafter: oneStepAfter,
 			morestepsbefore: !active && moreStepsBefore,
 			morestepsafter: !active && moreStepsAfter,
+			credit: content.title === 'credit',
 		}"
 		:style="{
 			zIndex: 100 - index,
@@ -62,6 +63,7 @@ function handleReturn() {
 			:style="{
 				backgroundImage: `url('${BASE_URL}/src/assets/images/${content.title}-header.png')`,
 			}"
+			v-if="content.title !== 'credit'"
 		>
 			<div class="articleelement-header-content">
 				<button @click="handleReturn">
@@ -71,7 +73,7 @@ function handleReturn() {
 				<h2>{{ t(`${content.title}.maintitle`) }}</h2>
 			</div>
 		</div>
-		<div class="articleelement-content">
+		<div class="articleelement-content" v-if="content.title !== 'credit'">
 			<div
 				v-for="(sec, index) of content.content"
 				:key="`${content.title}-sec-${index + 1}`"
@@ -80,15 +82,115 @@ function handleReturn() {
 					{{ t(`${content.title}.text${index + 1}`) }}
 				</p>
 				<img
+					class="img"
 					v-else-if="sec === 'img'"
 					:src="`${BASE_URL}/src/assets/images/${content.title}-${
 						index + 1
 					}.png`"
 				/>
-				<div v-else-if="sec === 'caption'">
+				<div v-else-if="sec === 'caption'" class="caption">
 					<p>{{ t(`${content.title}.captiontitle${index + 1}`) }}</p>
 					<p>{{ t(`${content.title}.captiontext${index + 1}`) }}</p>
 				</div>
+				<div v-else-if="sec === 'dbimg'" class="dbimg">
+					<img
+						:src="`${BASE_URL}/src/assets/images/${content.title}-${
+							index + 1
+						}-1.png`"
+					/>
+					<img
+						:src="`${BASE_URL}/src/assets/images/${content.title}-${
+							index + 1
+						}-2.png`"
+					/>
+				</div>
+				<div v-else-if="sec === 'dbimgcaption'" class="dbimg">
+					<div>
+						<img
+							:src="`${BASE_URL}/src/assets/images/${
+								content.title
+							}-${index + 1}-1.png`"
+						/>
+						<div class="caption">
+							<p>
+								{{
+									t(
+										`${content.title}.captiontitle${
+											index + 1
+										}-1`
+									)
+								}}
+							</p>
+							<p>
+								{{
+									t(
+										`${content.title}.captiontext${
+											index + 1
+										}-1`
+									)
+								}}
+							</p>
+						</div>
+					</div>
+					<div>
+						<img
+							:src="`${BASE_URL}/src/assets/images/${
+								content.title
+							}-${index + 1}-2.png`"
+						/>
+						<div class="caption">
+							<p>
+								{{
+									t(
+										`${content.title}.captiontitle${
+											index + 1
+										}-2`
+									)
+								}}
+							</p>
+							<p>
+								{{
+									t(
+										`${content.title}.captiontext${
+											index + 1
+										}-2`
+									)
+								}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div v-else class="articleelement-credit">
+			<h2>
+				<button @click="handleReturn">
+					<span>arrow_back_ios</span></button
+				>{{ t("credits.open") }}
+			</h2>
+			<h3>{{ t("credits.description") }}</h3>
+			<div class="articleelement-credit-positioner">
+				<div>
+					<h3>{{ t("credits.team") }}</h3>
+					<p>{{ t("credits.team-1") }}</p>
+					<p>{{ t("credits.team-2") }}</p>
+					<p>{{ t("credits.team-3") }}</p>
+					<p>{{ t("credits.team-4") }}</p>
+					<p>{{ t("credits.team-5") }}</p>
+					<p>{{ t("credits.team-6") }}</p>
+				</div>
+				<a
+					href="https://projectonepremium.com"
+					target="_blank"
+					rel="noreferrer"
+					><span>north_east</span>{{ t("credits.data") }}</a
+				>
+				<a
+					href="https://projectonepremium.com"
+					target="_blank"
+					rel="noreferrer"
+					><span>north_east</span>GitHub</a
+				>
 			</div>
 		</div>
 	</div>
@@ -212,12 +314,12 @@ function handleReturn() {
 				line-height: 1.5;
 			}
 
-			img {
+			.img {
 				width: min(600px, 100%);
 				align-self: center;
 			}
 
-			div {
+			.caption {
 				align-self: center;
 				max-width: min(400px, 100%);
 
@@ -228,6 +330,27 @@ function handleReturn() {
 					&:first-child {
 						font-weight: 700;
 					}
+				}
+			}
+
+			.dbimg {
+				display: grid;
+				width: min(700px, 85%);
+				align-self: center;
+				grid-template-columns: 1fr 1fr;
+				gap: 1rem;
+
+				img {
+					width: 100%;
+				}
+
+				.caption {
+					margin-top: 1rem;
+				}
+
+				@media screen and (max-width: 750px) {
+					width: min(350px, 85%);
+					grid-template-columns: 1fr;
 				}
 			}
 
@@ -242,6 +365,118 @@ function handleReturn() {
 			margin: 1rem;
 		}
 	}
+
+	&-credit {
+		width: min(400px, 100%);
+		height: 100%;
+		max-height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		transition: opacity 0.3s ease-in-out;
+
+		h2 {
+			position: relative;
+			display: flex;
+			align-items: center;
+			width: 100%;
+			font-size: 2.5rem;
+			padding-bottom: 8px;
+			color: black;
+			border-bottom: solid 2px black;
+			overflow: hidden;
+
+			button {
+				height: 24px;
+				display: none;
+				position: absolute;
+				left: 1.5rem;
+				overflow: hidden;
+
+				span {
+					font-size: var(--font-xl);
+					color: black;
+				}
+			}
+		}
+
+		> h3 {
+			color: black;
+			margin: var(--font-s) 0 var(--font-m);
+			font-size: var(--font-l);
+			overflow: hidden;
+		}
+
+		&-positioner {
+			width: 100%;
+			display: grid;
+			grid-template-areas:
+				"one one"
+				"two three";
+			grid-template-columns: 1fr 1fr;
+			gap: var(--font-s);
+			padding: 1rem;
+
+			> div:first-child {
+				grid-area: one;
+				padding: 1rem;
+				border-radius: 1rem;
+				border: 2px solid var(--color-border);
+				background-color: var(--color-background);
+				overflow: hidden;
+
+				h3 {
+					font-size: var(--font-l);
+					font-weight: 700;
+					color: black;
+					margin-bottom: 1rem;
+				}
+
+				p {
+					font-size: var(--font-m);
+					line-height: 1.5;
+				}
+			}
+
+			a {
+				position: relative;
+				height: 4rem;
+				display: flex;
+				align-items: flex-end;
+				padding: 1rem;
+				border-radius: 1rem;
+				border: 2px solid var(--color-border);
+				font-size: var(--font-l);
+				font-weight: 700;
+				background-color: var(--color-background);
+				transition: box-shadow 0.3s ease-in-out;
+
+				span {
+					position: absolute;
+					right: 0.5rem;
+					top: 0.5rem;
+					font-size: var(--font-xl);
+					color: var(--color-border);
+				}
+
+				&:hover {
+					box-shadow: var(--color-border) 0px 0px 10px;
+					cursor: pointer;
+				}
+			}
+		}
+
+		@media (max-width: 1025px) {
+			h2 {
+				padding-left: 3rem;
+				button {
+					display: block;
+				}
+			}
+		}
+	}
 }
 
 .morestepsbefore {
@@ -252,6 +487,10 @@ function handleReturn() {
 .onestepbefore {
 	top: 133%;
 	background-color: #6a6a6a;
+
+	.articleelement-credit {
+		opacity: 0.2;
+	}
 }
 
 .onestepafter {
@@ -262,5 +501,13 @@ function handleReturn() {
 .morestepsafter {
 	top: -116%;
 	background-color: #6a6a6a;
+}
+
+.credit {
+	box-shadow: none;
+	background-color: var(--color-background);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 </style>

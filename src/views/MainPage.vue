@@ -26,10 +26,10 @@ onUnmounted(() => {
 		class="mainpage"
 		:style="{
 			height: `calc(100vh + ${
-				articles.length * appStore.stopDistance
+				(articles.length + 1) * appStore.stopDistance
 			}px)`,
 			height: `calc(var(--vh) * 100 + ${
-				articles.length * appStore.stopDistance
+				(articles.length + 1) * appStore.stopDistance
 			}px)`,
 		}"
 	>
@@ -49,6 +49,11 @@ onUnmounted(() => {
 					:index="index"
 					:content="article"
 					:key="`${article.section}-${article.title}`"
+				/>
+				<ArticleElement
+					:position="position"
+					:index="articles.length"
+					:content="{ title: 'credit' }"
 				/>
 			</div>
 		</div>
