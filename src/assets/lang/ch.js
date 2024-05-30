@@ -20,7 +20,7 @@ export const ch = {
 	sidebar: {
 		title: "相關成因",
 		subtitle:
-			"造成致災性的道路塌陷，成因有以下這些：造成致災性的道路塌陷，成因有以下這些：",
+			"造成致災性的道路塌陷，成因有以下這些：",
 		cause: "有影響",
 		nocause: "無影響",
 	},
@@ -41,5 +41,48 @@ export const ch = {
 		captiontitle4: "Step 1：關鍵字篩選",
 		captiontext4:
 			"摸壞說明or派工說明包含「掏空、塌陷、坍塌、交維、交圍、下陷」",
+	},
+	"definition-2": {
+		title: "定義目標案件",
+		maintitle: "以損壞說明關鍵字與人工判斷標記之",
+		subtitle: "目標案件怎麼定義？",
+		text1: "由於現有資料沒有欄位人工標記天坑，故經由有被報導的天坑資料中，由ChatGPT整理重要關鍵字，並人工補上可能相關的關鍵字。",
+		text2: "關鍵字：損壞說明or派工說明包含「掏空、塌陷、坍塌、交維、交圍、下陷 」",
+		captiontitle4: "Step 1：關鍵字篩選",
+		captiontext4:
+			"摸壞說明or派工說明包含「掏空、塌陷、坍塌、交維、交圍、下陷」",
+	},
+	"definition-5": {
+		title: "定義目標案件",
+		maintitle: "以損壞說明關鍵字與人工判斷標記之",
+		subtitle: "目標案件怎麼定義？",
+		text1: "由於現有資料沒有欄位人工標記天坑，故經由有被報導的天坑資料中，由ChatGPT整理重要關鍵字，並人工補上可能相關的關鍵字。",
+		"captiontitle2-1": "陳威竹",
+		"captiontext2-1": "真是帥氣啊，好羨慕",
+		"captiontitle2-2": "陳威竹某個影片有出現過的人",
+		"captiontext2-2": "真是美麗啊，好羨慕",
+		text3: "關鍵字：損壞說明or派工說明包含「掏空、塌陷、坍塌、交維、交圍、下陷 」",
+	},
+	"definition-2": {
+		title: "定義目標案件",
+		maintitle: "以損壞說明關鍵字與人工判斷標記之",
+		subtitle: "目標案件怎麼定義？",
+		text1: "由於現有資料沒有欄位人工標記天坑，故經由有被報導的天坑資料中，由ChatGPT整理重要關鍵字，並人工補上可能相關的關鍵字。",
+		text2: "關鍵字：損壞說明or派工說明包含「掏空、塌陷、坍塌、交維、交圍、下陷 」",
+		captiontitle4: "Step 1：關鍵字篩選",
+		captiontext4:
+			"摸壞說明or派工說明包含「掏空、塌陷、坍塌、交維、交圍、下陷」",
+	},
+	credits: {
+		open: "成果開源",
+		description: "讓最終成果可以被取用，成為下一個研究者的肩膀。",
+		team: "團隊名單",
+		data: "使用資料集",
+		"team-1": "資料分析＿＿＿＿＿Iima Yu",
+		"team-2": "預測模擬＿＿＿＿＿Jack Huang",
+		"team-3": "空間分析＿＿＿＿＿Ian Huang",
+		"team-4": "前端工程＿＿＿＿＿Igor Ho",
+		"team-5": "介面設計＿＿＿＿＿Chu Chen",
+		"team-6": "文章編輯＿＿＿＿＿Chu Chen",
 	},
 };

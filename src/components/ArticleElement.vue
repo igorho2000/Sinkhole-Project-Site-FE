@@ -212,8 +212,8 @@ function handleReturn() {
 				line-height: 1.5;
 			}
 
-			img {
-				width: min(600px, 100%);
+			.img {
+				width: min(1200px, 100%);
 				align-self: center;
 			}
 
@@ -228,6 +228,27 @@ function handleReturn() {
 					&:first-child {
 						font-weight: 700;
 					}
+				}
+			}
+
+			.dbimg {
+				display: grid;
+				width: min(1200px, 100%);
+				align-self: center;
+				grid-template-columns: 1fr 1fr;
+				gap: 1rem;
+
+				img {
+					width: 100%;
+				}
+
+				.caption {
+					margin-top: 1rem;
+				}
+
+				@media screen and (max-width: 750px) {
+					width: min(350px, 85%);
+					grid-template-columns: 1fr;
 				}
 			}
 
