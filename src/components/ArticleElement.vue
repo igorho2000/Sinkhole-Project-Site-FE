@@ -42,169 +42,168 @@ const moreStepsAfter = computed(() => {
 function handleReturn() {
 	appStore.articleMode = false;
 }
+function handleNavigateToThis() {
+	window.scrollTo({
+		top: appStore.stopDistance * props.index + 10,
+		behavior: "smooth",
+	});
+	console.log("navigate to this");
+}
 </script>
 
 <template>
-  <div
-    :class="{
-      articleelement: true,
-      onestepbefore: oneStepBefore,
-      onestepafter: oneStepAfter,
-      morestepsbefore: !active && moreStepsBefore,
-      morestepsafter: !active && moreStepsAfter,
-      credit: content.title === 'credit',
-    }"
-    :style="{
-      zIndex: 100 - index,
-    }"
-  >
-    <div
-      v-if="content.title !== 'credit'"
-      class="articleelement-header"
-      :style="{
-        backgroundImage: `url('${BASE_URL}images/${content.title}-header.png')`,
-      }"
-    >
-      <div class="articleelement-header-content">
-        <button @click="handleReturn">
-          <span>arrow_back_ios</span>
-        </button>
-        <h3>{{ t(`${content.title}.subtitle`) }}</h3>
-        <h2>{{ t(`${content.title}.maintitle`) }}</h2>
-      </div>
-    </div>
-    <div
-      v-if="content.title !== 'credit'"
-      class="articleelement-content"
-    >
-      <div
-        v-for="(sec, index) of content.content"
-        :key="`${content.title}-sec-${index + 1}`"
-      >
-        <p v-if="sec === 'text'">
-          {{ t(`${content.title}.text${index + 1}`) }}
-        </p>
-        <img
-          v-else-if="sec === 'img'"
-          class="img"
-          :src="`${BASE_URL}images/${content.title}-${index + 1}.png`"
-        >
-        <div
-          v-else-if="sec === 'caption'"
-          class="caption"
-        >
-          <p>{{ t(`${content.title}.captiontitle${index + 1}`) }}</p>
-          <p>{{ t(`${content.title}.captiontext${index + 1}`) }}</p>
-        </div>
-        <div
-          v-else-if="sec === 'dbimg'"
-          class="dbimg"
-        >
-          <img
-            :src="`${BASE_URL}images/${content.title}-${
-              index + 1
-            }-1.png`"
-          >
-          <img
-            :src="`${BASE_URL}images/${content.title}-${
-              index + 1
-            }-2.png`"
-          >
-        </div>
-        <div
-          v-else-if="sec === 'dbimgcaption'"
-          class="dbimg"
-        >
-          <div>
-            <img
-              :src="`${BASE_URL}images/${content.title}-${
-                index + 1
-              }-1.png`"
-            >
-            <div class="caption">
-              <p>
-                {{
-                  t(
-                    `${content.title}.captiontitle${
-                      index + 1
-                    }-1`
-                  )
-                }}
-              </p>
-              <p>
-                {{
-                  t(
-                    `${content.title}.captiontext${
-                      index + 1
-                    }-1`
-                  )
-                }}
-              </p>
-            </div>
-          </div>
-          <div>
-            <img
-              :src="`${BASE_URL}images/${content.title}-${
-                index + 1
-              }-2.png`"
-            >
-            <div class="caption">
-              <p>
-                {{
-                  t(
-                    `${content.title}.captiontitle${
-                      index + 1
-                    }-2`
-                  )
-                }}
-              </p>
-              <p>
-                {{
-                  t(
-                    `${content.title}.captiontext${
-                      index + 1
-                    }-2`
-                  )
-                }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      v-else
-      class="articleelement-credit"
-    >
-      <!-- <h2>
+	<div
+		:class="{
+			articleelement: true,
+			onestepbefore: oneStepBefore,
+			onestepafter: oneStepAfter,
+			morestepsbefore: !active && moreStepsBefore,
+			morestepsafter: !active && moreStepsAfter,
+			credit: content.title === 'credit',
+		}"
+		:style="{
+			zIndex: 100 - index,
+		}"
+		@click="handleNavigateToThis"
+	>
+		<div
+			v-if="content.title !== 'credit'"
+			class="articleelement-header"
+			:style="{
+				backgroundImage: `url('${BASE_URL}images/${content.title}-header.png')`,
+			}"
+		>
+			<div class="articleelement-header-content">
+				<button @click="handleReturn">
+					<span>arrow_back_ios</span>
+				</button>
+				<h3>{{ t(`${content.title}.subtitle`) }}</h3>
+				<h2>{{ t(`${content.title}.maintitle`) }}</h2>
+			</div>
+		</div>
+		<div
+			v-if="content.title !== 'credit'"
+			class="articleelement-content"
+			@scroll="handleNavigateToThis"
+		>
+			<div
+				v-for="(sec, index) of content.content"
+				:key="`${content.title}-sec-${index + 1}`"
+			>
+				<p v-if="sec === 'text'">
+					{{ t(`${content.title}.text${index + 1}`) }}
+				</p>
+				<img
+					v-else-if="sec === 'img'"
+					class="img"
+					:src="`${BASE_URL}images/${content.title}-${index + 1}.png`"
+				/>
+				<div v-else-if="sec === 'caption'" class="caption">
+					<p>{{ t(`${content.title}.captiontitle${index + 1}`) }}</p>
+					<p>{{ t(`${content.title}.captiontext${index + 1}`) }}</p>
+				</div>
+				<div v-else-if="sec === 'dbimg'" class="dbimg">
+					<img
+						:src="`${BASE_URL}images/${content.title}-${
+							index + 1
+						}-1.png`"
+					/>
+					<img
+						:src="`${BASE_URL}images/${content.title}-${
+							index + 1
+						}-2.png`"
+					/>
+				</div>
+				<div v-else-if="sec === 'dbimgcaption'" class="dbimg">
+					<div>
+						<img
+							:src="`${BASE_URL}images/${content.title}-${
+								index + 1
+							}-1.png`"
+						/>
+						<div class="caption">
+							<p>
+								{{
+									t(
+										`${content.title}.captiontitle${
+											index + 1
+										}-1`
+									)
+								}}
+							</p>
+							<p>
+								{{
+									t(
+										`${content.title}.captiontext${
+											index + 1
+										}-1`
+									)
+								}}
+							</p>
+						</div>
+					</div>
+					<div>
+						<img
+							:src="`${BASE_URL}images/${content.title}-${
+								index + 1
+							}-2.png`"
+						/>
+						<div class="caption">
+							<p>
+								{{
+									t(
+										`${content.title}.captiontitle${
+											index + 1
+										}-2`
+									)
+								}}
+							</p>
+							<p>
+								{{
+									t(
+										`${content.title}.captiontext${
+											index + 1
+										}-2`
+									)
+								}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div v-else class="articleelement-credit">
+			<!-- <h2>
         <button @click="handleReturn">
           <span>arrow_back_ios</span>
         </button>{{ t("credits.open") }}
       </h2> -->
-      <h3>{{ t("credits.description") }}</h3>
-      <div class="articleelement-credit-positioner">
-        <div>
-          <h3>{{ t("credits.team") }}</h3>
-          <p>{{ t("credits.team-1") }}</p>
-          <p>{{ t("credits.team-2") }}</p>
-          <p>{{ t("credits.team-3") }}</p>
-          <p>{{ t("credits.team-4") }}</p>
-          <p>{{ t("credits.team-5") }}</p>
-          <p>{{ t("credits.team-6") }}</p>
-        </div>
-        <a
-          href="https://projectonepremium.com"
-          target="_blank"
-          rel="noreferrer"
-        ><span>north_east</span>{{ t("credits.data") }}</a>
-        <a
-          href="https://projectonepremium.com"
-          target="_blank"
-          rel="noreferrer"
-        ><span>north_east</span>GitHub</a>
-      </div>
-    </div>
-  </div>
+			<h3>{{ t("credits.description") }}</h3>
+			<div class="articleelement-credit-positioner">
+				<div>
+					<h3>{{ t("credits.team") }}</h3>
+					<p>{{ t("credits.team-1") }}</p>
+					<p>{{ t("credits.team-2") }}</p>
+					<p>{{ t("credits.team-3") }}</p>
+					<p>{{ t("credits.team-4") }}</p>
+					<p>{{ t("credits.team-5") }}</p>
+					<p>{{ t("credits.team-6") }}</p>
+				</div>
+				<a
+					href="https://projectonepremium.com"
+					target="_blank"
+					rel="noreferrer"
+					><span>north_east</span>{{ t("credits.data") }}</a
+				>
+				<a
+					href="https://projectonepremium.com"
+					target="_blank"
+					rel="noreferrer"
+					><span>north_east</span>GitHub</a
+				>
+			</div>
+		</div>
+	</div>
 </template>
 
 <style scoped lang="scss">
