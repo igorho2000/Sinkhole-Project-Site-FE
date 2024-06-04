@@ -34,7 +34,7 @@ onBeforeMount(() => {
 	window.addEventListener("resize", setHeightWidthParams);
 });
 onMounted(() => {
-	document.title = appStore.lang === "en" ? "Sinkhole Analysis" : "天坑研究";
+	document.title = appStore.lang === "en" ? "Sinkhole Analysis" : "天坑潛在成因分析";
 	localStorage.setItem("lang", appStore.lang);
 	locale.value = appStore.lang;
 });

@@ -16,7 +16,7 @@ export const useAppStore = defineStore("app", {
 			this.lang = lang;
 			localStorage.setItem("lang", this.lang);
 			document.title =
-				this.lang === "en" ? "Sinkhole Analysis" : "天坑研究";
+				this.lang === "en" ? "Sinkhole Analysis" : "天坑潛在成因分析";
 		},
 		checkIfMobile() {
 			if (navigator.maxTouchPoints > 2) {
