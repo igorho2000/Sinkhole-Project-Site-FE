@@ -49,141 +49,145 @@ function handleClickArticle(title) {
 </script>
 
 <template>
-  <div class="sidebar">
-    <h1>{{ t("sidebar.title") }}</h1>
-    <h3>{{ t("sidebar.subtitle") }}</h3>
-    <div class="sidebar-sectionswrapper">
-      <div class="sidebar-sections">
-        <div class="sidebar-cause">
-          <div class="sidebar-cause-item">
-            <div />
-            <p>{{ t("sidebar.cause") }}</p>
-          </div>
-          <div class="sidebar-cause-item">
-            <div />
-            <p>{{ t("sidebar.nocause") }}</p>
-          </div>
-        </div>
-        <div class="sidebar-section">
-          <div @click="handleExpandSection('overview')">
-            <h2>{{ t("sections.overview") }}</h2>
-            <button v-if="open !== 'overview'">
-              <span>add</span>
-            </button>
-          </div>
-          <p v-if="open === 'overview'">
-            {{ t("sections.overviewdesc") }}
-          </p>
-          <div
-            :class="{
-              'sidebar-articles': true,
-              'sidebar-articles-active': open === 'overview',
-              'sidebar-articles-activescroll':
-                open === 'overview' &&
-                overviewArticles.length > 2,
-            }"
-          >
-            <button
-              v-for="overview in overviewArticles"
-              :key="`overview-${overview.title}-tab`"
-              :class="{
-                iscurrentarticle:
-                  currentArticle.title === overview.title &&
-                  open === 'overview',
-              }"
-              @click="handleClickArticle(overview.title)"
-            >
-              <div :class="{ iscause: overview.isCause }">
-                <span>{{ overview.icon }}</span>
-              </div>
-              <h4>{{ t(`${overview.title}.title`) }}</h4>
-              <span>arrow_forward_ios</span>
-            </button>
-          </div>
-        </div>
-        <div class="sidebar-section">
-          <div @click="handleExpandSection('time')">
-            <h2>{{ t("sections.time") }}</h2>
-            <button v-if="open !== 'time'">
-              <span>add</span>
-            </button>
-          </div>
-          <p>{{ t("sections.timedesc") }}</p>
-          <div
-            :class="{
-              'sidebar-articles': true,
-              'sidebar-articles-active': open === 'time',
-              'sidebar-articles-activescroll':
-                open === 'time' && timeArticles.length > 2,
-            }"
-          >
-            <button
-              v-for="time in timeArticles"
-              :key="`time-${time.title}-tab`"
-              :class="{
-                iscurrentarticle:
-                  currentArticle.title === time.title &&
-                  open === 'time',
-              }"
-              @click="handleClickArticle(time.title)"
-            >
-              <div :class="{ iscause: time.isCause }">
-                <span>{{ time.icon }}</span>
-              </div>
-              <h4>{{ t(`${time.title}.title`) }}</h4>
-              <span>arrow_forward_ios</span>
-            </button>
-          </div>
-        </div>
-        <div class="sidebar-section">
-          <div @click="handleExpandSection('space')">
-            <h2>{{ t("sections.space") }}</h2>
-            <button v-if="open !== 'space'">
-              <span>add</span>
-            </button>
-          </div>
-          <p>{{ t("sections.spacedesc") }}</p>
-          <div
-            :class="{
-              'sidebar-articles': true,
-              'sidebar-articles-active': open === 'space',
-              'sidebar-articles-activescroll':
-                open === 'space' && spaceArticles.length > 2,
-            }"
-          >
-            <button
-              v-for="space in spaceArticles"
-              :key="`space-${space.title}-tab`"
-              :class="{
-                iscurrentarticle:
-                  currentArticle.title === space.title &&
-                  open === 'space',
-              }"
-              @click="handleClickArticle(space.title)"
-            >
-              <div :class="{ iscause: space.isCause }">
-                <span>{{ space.icon }}</span>
-              </div>
-              <h4>{{ t(`${space.title}.title`) }}</h4>
-              <span>arrow_forward_ios</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      :class="{
-        'sidebar-controls': true,
-      }"
-    >
-      <RouterLink to="/">
-        <span>home</span>
-      </RouterLink>
-      <!-- <button><span>home</span></button>
+	<div class="sidebar">
+		<h1>{{ t("sidebar.title") }}</h1>
+		<h3>{{ t("sidebar.subtitle") }}</h3>
+		<div class="sidebar-sectionswrapper">
+			<div class="sidebar-sections">
+				<div class="sidebar-cause">
+					<div class="sidebar-cause-item">
+						<div />
+						<p>{{ t("sidebar.cause") }}</p>
+					</div>
+					<div class="sidebar-cause-item">
+						<div />
+						<p>{{ t("sidebar.nocause") }}</p>
+					</div>
+				</div>
+				<div class="sidebar-section">
+					<div @click="handleExpandSection('overview')">
+						<h2>{{ t("sections.overview") }}</h2>
+						<button v-if="open !== 'overview'">
+							<span>add</span>
+						</button>
+					</div>
+					<p :class="{ expand: open === 'overview' }">
+						{{ t("sections.overviewdesc") }}
+					</p>
+					<div
+						:class="{
+							'sidebar-articles': true,
+							'sidebar-articles-active': open === 'overview',
+							'sidebar-articles-activescroll':
+								open === 'overview' &&
+								overviewArticles.length > 2,
+						}"
+					>
+						<button
+							v-for="overview in overviewArticles"
+							:key="`overview-${overview.title}-tab`"
+							:class="{
+								iscurrentarticle:
+									currentArticle.title === overview.title &&
+									open === 'overview',
+							}"
+							@click="handleClickArticle(overview.title)"
+						>
+							<div :class="{ iscause: overview.isCause }">
+								<span>{{ overview.icon }}</span>
+							</div>
+							<h4>{{ t(`${overview.title}.title`) }}</h4>
+							<span>arrow_forward_ios</span>
+						</button>
+					</div>
+				</div>
+				<div class="sidebar-section">
+					<div @click="handleExpandSection('time')">
+						<h2>{{ t("sections.time") }}</h2>
+						<button v-if="open !== 'time'">
+							<span>add</span>
+						</button>
+					</div>
+					<p :class="{ expand: open === 'time' }">
+						{{ t("sections.timedesc") }}
+					</p>
+					<div
+						:class="{
+							'sidebar-articles': true,
+							'sidebar-articles-active': open === 'time',
+							'sidebar-articles-activescroll':
+								open === 'time' && timeArticles.length > 2,
+						}"
+					>
+						<button
+							v-for="time in timeArticles"
+							:key="`time-${time.title}-tab`"
+							:class="{
+								iscurrentarticle:
+									currentArticle.title === time.title &&
+									open === 'time',
+							}"
+							@click="handleClickArticle(time.title)"
+						>
+							<div :class="{ iscause: time.isCause }">
+								<span>{{ time.icon }}</span>
+							</div>
+							<h4>{{ t(`${time.title}.title`) }}</h4>
+							<span>arrow_forward_ios</span>
+						</button>
+					</div>
+				</div>
+				<div class="sidebar-section">
+					<div @click="handleExpandSection('space')">
+						<h2>{{ t("sections.space") }}</h2>
+						<button v-if="open !== 'space'">
+							<span>add</span>
+						</button>
+					</div>
+					<p :class="{ expand: open === 'space' }">
+						{{ t("sections.spacedesc") }}
+					</p>
+					<div
+						:class="{
+							'sidebar-articles': true,
+							'sidebar-articles-active': open === 'space',
+							'sidebar-articles-activescroll':
+								open === 'space' && spaceArticles.length > 2,
+						}"
+					>
+						<button
+							v-for="space in spaceArticles"
+							:key="`space-${space.title}-tab`"
+							:class="{
+								iscurrentarticle:
+									currentArticle.title === space.title &&
+									open === 'space',
+							}"
+							@click="handleClickArticle(space.title)"
+						>
+							<div :class="{ iscause: space.isCause }">
+								<span>{{ space.icon }}</span>
+							</div>
+							<h4>{{ t(`${space.title}.title`) }}</h4>
+							<span>arrow_forward_ios</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div
+			:class="{
+				'sidebar-controls': true,
+			}"
+		>
+			<RouterLink to="/">
+				<span>home</span>
+			</RouterLink>
+			<!-- <button><span>home</span></button>
 			<button><span>home</span></button> -->
-      <TranslateButton :dark="true" />
-    </div>
-  </div>
+			<TranslateButton :dark="true" />
+		</div>
+	</div>
 </template>
 
 <style scoped lang="scss">
@@ -283,6 +287,12 @@ function handleClickArticle(title) {
 
 		p {
 			font-size: var(--font-m);
+			margin-top: 0px;
+			max-height: 0px;
+			transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+		}
+		p.expand {
+			max-height: 100px;
 			margin-top: var(--font-s);
 		}
 	}
