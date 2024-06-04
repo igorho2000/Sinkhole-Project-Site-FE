@@ -7,5 +7,8 @@ export default defineConfig({
 	optimizeDeps: {
 		include: ["./assets/**/*.{jpg,png,gif,svg}"],
 	},
+	server: {
+		watch: {usePolling: true}
+	}
 	// base: "/sinkhole",
 });

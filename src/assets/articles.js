@@ -2,7 +2,7 @@ export const articles = [
 	{
 		section: "overview",
 		type: "article",
-		title: "definition",
+		title: "overview-1",
 		icon: "adjust",
 		isCause: true,
 		content: ["text", "text", "img", "caption"],
@@ -10,7 +10,7 @@ export const articles = [
 	{
 		section: "overview",
 		type: "article",
-		title: "definition-2",
+		title: "overview-2",
 		icon: "search",
 		isCause: true,
 		content: ["text", "text", "dbimg"],
@@ -18,7 +18,7 @@ export const articles = [
 	{
 		section: "time",
 		type: "article",
-		title: "definition-3",
+		title: "time-1",
 		icon: "broken_image",
 		isCause: true,
 		content: ["text", "text", "img"],
@@ -26,7 +26,7 @@ export const articles = [
 	{
 		section: "time",
 		type: "article",
-		title: "definition-4",
+		title: "time-2",
 		icon: "storm",
 		isCause: true,
 		content: ["text", "text", "img"],
@@ -34,7 +34,7 @@ export const articles = [
 	{
 		section: "time",
 		type: "article",
-		title: "definition-5",
+		title: "time-3",
 		icon: "thunderstorm",
 		isCause: true,
 		content: ["text", "text", "img"],
@@ -42,7 +42,7 @@ export const articles = [
 	{
 		section: "time",
 		type: "article",
-		title: "definition-6",
+		title: "time-4",
 		icon: "tsunami",
 		isCause: true,
 		content: ["text", "text", "img"],
@@ -50,7 +50,7 @@ export const articles = [
 	{
 		section: "time",
 		type: "article",
-		title: "definition-7",
+		title: "time-5",
 		icon: "sailing",
 		isCause: false,
 		content: ["text", "text", "img"],
@@ -58,7 +58,7 @@ export const articles = [
 	{
 		section: "time",
 		type: "article",
-		title: "definition-8",
+		title: "time-6",
 		icon: "water_drop",
 		isCause: true,
 		content: ["text", "text", "img"],
@@ -66,7 +66,7 @@ export const articles = [
 	{
 		section: "space",
 		type: "article",
-		title: "definition-9",
+		title: "space-1",
 		icon: "forest",
 		isCause: false,
 		content: ["text", "text", "img", "caption"],
@@ -74,7 +74,7 @@ export const articles = [
 	{
 		section: "space",
 		type: "article",
-		title: "definition-10",
+		title: "space-2",
 		icon: "forest",
 		isCause: false,
 		content: ["text", "text", "img", "caption"],
@@ -82,7 +82,7 @@ export const articles = [
 	{
 		section: "space",
 		type: "article",
-		title: "definition-11",
+		title: "space-3",
 		icon: "forest",
 		isCause: false,
 		content: ["text", "text", "img", "caption"],
@@ -90,7 +90,7 @@ export const articles = [
 	{
 		section: "space",
 		type: "article",
-		title: "definition-12",
+		title: "space-4",
 		icon: "forest",
 		isCause: false,
 		content: ["text", "text", "img", "caption"],
@@ -98,7 +98,7 @@ export const articles = [
 	{
 		section: "space",
 		type: "article",
-		title: "definition-13",
+		title: "space-5",
 		icon: "forest",
 		isCause: false,
 		content: ["text", "text", "img", "caption"],
@@ -106,7 +106,7 @@ export const articles = [
 	{
 		section: "space",
 		type: "article",
-		title: "definition-14",
+		title: "space-6",
 		icon: "forest",
 		isCause: false,
 		content: ["text", "text", "img", "caption"],
@@ -114,7 +114,7 @@ export const articles = [
 	{
 		section: "space",
 		type: "article",
-		title: "definition-15",
+		title: "space-7",
 		icon: "forest",
 		isCause: false,
 		content: ["text", "text", "img", "caption"],
@@ -122,7 +122,7 @@ export const articles = [
 	{
 		section: "space",
 		type: "article",
-		title: "definition-16",
+		title: "space-8",
 		icon: "forest",
 		isCause: false,
 		content: ["text", "text", "img", "caption"],
@@ -130,7 +130,7 @@ export const articles = [
 ];
 
 /* 
-先在 /lang/ch.js 加入文章 title 為 key 的 object， e.g. definition: {}
+先在 /lang/ch.js 加入文章 title 為 key 的 object， e.g. overview-1: {}
 
 content 順序編碼從 1 開始
 
