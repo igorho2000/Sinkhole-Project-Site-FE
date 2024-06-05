@@ -21,7 +21,7 @@ export const articles = [
 		title: "time-1",
 		icon: "storm",
 		isCause: true,
-		content: ["text", "text", "img", "text"],
+		content: ["text", "text", "text", "img", "caption"],
 	},
 	{
 		section: "time",
