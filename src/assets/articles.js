@@ -5,7 +5,7 @@ export const articles = [
 		title: "overview-1",
 		icon: "adjust",
 		isCause: true,
-		content: ["text", "text", "img", "text","caption"],
+		content: ["text", "text", "text", "img", "caption"],
 	},
 	{
 		section: "overview",
@@ -13,7 +13,7 @@ export const articles = [
 		title: "overview-2",
 		icon: "search",
 		isCause: true,
-		content: ["text", "text", "caption"],
+		content: ["text", "text", "dbimgcaption"],
 	},
 	{
 		section: "time",
