@@ -303,6 +303,7 @@ function handleNavigateToThis() {
 		height: calc(70% - 4rem);
 		margin: 2rem;
 		overflow-y: auto;
+		transition: opacity 0.3s ease-in-out;
 
 		&::-webkit-scrollbar {
 			width: 6px;
@@ -542,6 +543,10 @@ function handleNavigateToThis() {
 .onestepafter {
 	top: -33%;
 	background-color: #6a6a6a;
+
+	.articleelement-content {
+		opacity: 0;
+	}
 }
 
 .morestepsafter {
