@@ -45,7 +45,7 @@ export const articles = [
 		title: "time-4",
 		icon: "water_drop",
 		isCause: true,
-		content: ["text", "text", "img", "text"],
+		content: ["text", "text", "dbimgcaption", "text"],
 	},
 	{
 		section: "time",
@@ -53,7 +53,7 @@ export const articles = [
 		title: "time-5",
 		icon: "sailing",
 		isCause: false,
-		content: ["text", "text", "img", "text"],
+		content: ["text", "text", "dbimgcaption", "text"],
 	},
 	{
 		section: "time",
@@ -61,7 +61,7 @@ export const articles = [
 		title: "time-6",
 		icon: "tsunami",
 		isCause: true,
-		content: ["text", "text", "img", "text"],
+		content: ["text", "text", "dbimgcaption", "text"],
 	},
 	{
 		section: "space",
