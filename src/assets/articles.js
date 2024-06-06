@@ -37,7 +37,7 @@ export const articles = [
 		title: "time-3",
 		icon: "thunderstorm",
 		isCause: true,
-		content: ["text", "text", "img", "text"],
+		content: ["text", "text", "dbimgcaption", "text"],
 	},
 	{
 		section: "time",
