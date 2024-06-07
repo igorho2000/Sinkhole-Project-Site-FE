@@ -29,7 +29,7 @@ export const articles = [
 		title: "time-2",
 		icon: "broken_image",
 		isCause: true,
-		content: ["text", "text", "dbimgcaption", "text", "text"],
+		content: ["text", "text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "time",
@@ -37,7 +37,7 @@ export const articles = [
 		title: "time-3",
 		icon: "thunderstorm",
 		isCause: true,
-		content: ["text", "text", "dbimgcaption", "text"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "time",
@@ -45,7 +45,7 @@ export const articles = [
 		title: "time-4",
 		icon: "water_drop",
 		isCause: true,
-		content: ["text", "text", "dbimgcaption", "text"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "time",
@@ -53,7 +53,7 @@ export const articles = [
 		title: "time-5",
 		icon: "sailing",
 		isCause: false,
-		content: ["text", "text", "dbimgcaption", "text"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "time",
@@ -61,7 +61,7 @@ export const articles = [
 		title: "time-6",
 		icon: "tsunami",
 		isCause: true,
-		content: ["text", "text", "dbimgcaption", "text"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "space",
@@ -69,7 +69,7 @@ export const articles = [
 		title: "space-1",
 		icon: "construction",
 		isCause: true,
-		content: ["text", "text", "img", "text", "text"],
+		content: ["text", "text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "space",
@@ -77,7 +77,7 @@ export const articles = [
 		title: "space-2",
 		icon: "location_on",
 		isCause: false,
-		content: ["text", "text", "img", "text", "text"],
+		content: ["text", "text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "space",
@@ -85,7 +85,7 @@ export const articles = [
 		title: "space-3",
 		icon: "flood",
 		isCause: true,
-		content: ["text", "text", "img", "caption"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "space",
@@ -93,7 +93,7 @@ export const articles = [
 		title: "space-4",
 		icon: "waves",
 		isCause: false,
-		content: ["text", "text", "img", "text"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "space",
@@ -101,7 +101,7 @@ export const articles = [
 		title: "space-5",
 		icon: "plumbing",
 		isCause: true,
-		content: ["text", "text", "img", "text", "text"],
+		content: ["text", "text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "space",
@@ -109,7 +109,7 @@ export const articles = [
 		title: "space-6",
 		icon: "bathroom",
 		isCause: true,
-		content: ["text", "text", "img", "text", "text"],
+		content: ["text", "text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "space",
@@ -117,7 +117,7 @@ export const articles = [
 		title: "space-7",
 		icon: "apartment",
 		isCause: true,
-		content: ["text", "text", "img", "text", "text"],
+		content: ["text", "text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "space",
@@ -125,7 +125,7 @@ export const articles = [
 		title: "space-8",
 		icon: "subway",
 		isCause: false,
-		content: ["text", "text", "img", "text", "text"],
+		content: ["text", "text", "text", "text", "dbimgcaption"],
 	},
 ];
 
