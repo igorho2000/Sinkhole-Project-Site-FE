@@ -77,7 +77,7 @@ export const articles = [
 		title: "space-2",
 		icon: "location_on",
 		isCause: false,
-		content: ["text", "text", "text", "text", "dbimgcaption"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "space",
@@ -101,7 +101,7 @@ export const articles = [
 		title: "space-5",
 		icon: "plumbing",
 		isCause: true,
-		content: ["text", "text", "text", "text", "dbimgcaption"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "space",
