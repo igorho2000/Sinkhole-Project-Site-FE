@@ -188,6 +188,7 @@ function handleNavigateToThis() {
 					<p>{{ t("credits.team-4") }}</p>
 					<p>{{ t("credits.team-5") }}</p>
 					<p>{{ t("credits.team-6") }}</p>
+					<p>{{ t("credits.team-7") }}</p>
 				</div>
 				<a
 					href="https://projectonepremium.com"
