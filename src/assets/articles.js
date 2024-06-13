@@ -13,7 +13,7 @@ export const articles = [
 		title: "overview-2",
 		icon: "search",
 		isCause: true,
-		content: ["text", "text", "dbimgcaption"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "time",
