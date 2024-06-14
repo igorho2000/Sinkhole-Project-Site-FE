@@ -60,8 +60,8 @@ function handleClickArticle(title) {
 						<p>{{ t("sidebar.cause") }}</p>
 					</div>
 					<div class="sidebar-cause-item">
-						<div />
-						<p>{{ t("sidebar.nocause") }}</p>
+						<!-- <div /> -->
+						<!-- <p>{{ t("sidebar.nocause") }}</p> -->
 					</div>
 				</div>
 				<div class="sidebar-section">
