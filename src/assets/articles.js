@@ -135,6 +135,14 @@ export const articles = [
 		isCause: false,
 		content: ["text", "text", "text", "text", "dbimgcaption"],
 	},
+	{
+		section: "space",
+		type: "article",
+		title: "space-9",
+		icon: "subway",
+		isCause: false,
+		content: ["text", "text", "text", "text", "dbimgcaption"],
+	},
 ];
 
 /* 
