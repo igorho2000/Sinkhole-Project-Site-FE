@@ -70,7 +70,7 @@ function handleNavigateToThis() {
 			v-if="content.title !== 'credit'"
 			class="articleelement-header"
 			:style="{
-				backgroundImage: `url('${BASE_URL}images/${content.title}-header.png')`,
+				backgroundImage: `url('${BASE_URL === '/' ? '/' : '/sinkhole/'}images/${content.title}-header.png')`,
 			}"
 		>
 			<div class="articleelement-header-content">
@@ -96,7 +96,7 @@ function handleNavigateToThis() {
 				<img
 					v-else-if="sec === 'img'"
 					class="img"
-					:src="`${BASE_URL}images/${content.title}-${index + 1}.png`"
+					:src="`${BASE_URL === '/' ? '/' : '/sinkhole/'}images/${content.title}-${index + 1}.png`"
 				/>
 				<div v-else-if="sec === 'caption'" class="caption">
 					<p>{{ t(`${content.title}.captiontitle${index + 1}`) }}</p>
@@ -104,12 +104,12 @@ function handleNavigateToThis() {
 				</div>
 				<div v-else-if="sec === 'dbimg'" class="dbimg">
 					<img
-						:src="`${BASE_URL}images/${content.title}-${
+						:src="`${BASE_URL === '/' ? '/' : '/sinkhole/'}images/${content.title}-${
 							index + 1
 						}-1.png`"
 					/>
 					<img
-						:src="`${BASE_URL}images/${content.title}-${
+						:src="`${BASE_URL === '/' ? '/' : '/sinkhole/'}images/${content.title}-${
 							index + 1
 						}-2.png`"
 					/>
@@ -117,7 +117,7 @@ function handleNavigateToThis() {
 				<div v-else-if="sec === 'dbimgcaption'" class="dbimg">
 					<div>
 						<img
-							:src="`${BASE_URL}images/${content.title}-${
+							:src="`${BASE_URL === '/' ? '/' : '/sinkhole/'}images/${content.title}-${
 								index + 1
 							}-1.png`"
 						/>
@@ -144,7 +144,7 @@ function handleNavigateToThis() {
 					</div>
 					<div>
 						<img
-							:src="`${BASE_URL}images/${content.title}-${
+							:src="`${BASE_URL === '/' ? '/' : '/sinkhole/'}images/${content.title}-${
 								index + 1
 							}-2.png`"
 						/>

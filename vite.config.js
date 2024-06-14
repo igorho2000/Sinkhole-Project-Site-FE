@@ -8,7 +8,7 @@ export default defineConfig({
 		include: ["./assets/**/*.{jpg,png,gif,svg}"],
 	},
 	server: {
-		watch: {usePolling: true}
-	}
+		watch: { usePolling: true },
+	},
 	// base: "/sinkhole",
 });

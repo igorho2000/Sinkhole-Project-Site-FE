@@ -82,7 +82,7 @@ function handleClick() {
         v-if="page === 3"
         class="homepage-image"
       >
-	  	<img :src="`${BASE_URL}images/home2.png`">
+	  	<img :src="`${BASE_URL === '/' ? '/' : '/sinkhole/'}images/home2.png`">
         <h2>{{ t("home.causetitle") }}</h2>
         <h3>{{ t("home.causesubtitle") }}</h3>
       </div>
@@ -92,7 +92,7 @@ function handleClick() {
         v-if="page === 4"
         class="homepage-image"
       >
-	  	<img :src="`${BASE_URL}images/home1.png`">
+	  	<img :src="`${BASE_URL === '/' ? '/' : '/sinkhole/'}images/home1.png`">
         <h2>{{ t("home.quotetitle") }}</h2>
         <h3>{{ t("home.quotesubtitle") }}</h3>
         <p>{{ t("home.quoteperson") }}</p>
