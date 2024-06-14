@@ -16,6 +16,14 @@ export const articles = [
 		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
+		section: "overview",
+		type: "article",
+		title: "overview-3",
+		icon: "search",
+		isCause: true,
+		content: ["text", "text", "dbimgcaption", "text", "dbimgcaption"],
+	},
+	{
 		section: "time",
 		type: "article",
 		title: "time-1",
