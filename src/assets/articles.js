@@ -21,7 +21,7 @@ export const articles = [
 		title: "overview-3",
 		icon: "dns",
 		isCause: true,
-		content: ["text", "text", "dbimgcaption"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "time",
