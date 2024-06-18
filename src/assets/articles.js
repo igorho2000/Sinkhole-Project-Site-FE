@@ -35,16 +35,16 @@ export const articles = [
 		section: "time",
 		type: "article",
 		title: "time-2",
-		icon: "broken_image",
+		icon: "tsunami",
 		isCause: true,
-		content: ["text", "text", "text", "text", "dbimgcaption"],
+		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "time",
 		type: "article",
 		title: "time-3",
 		icon: "thunderstorm",
-		isCause: true,
+		isCause: false,
 		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
@@ -59,16 +59,16 @@ export const articles = [
 		section: "time",
 		type: "article",
 		title: "time-5",
-		icon: "sailing",
+		icon: "broken_image",
 		isCause: false,
-		content: ["text", "text", "text", "dbimgcaption"],
+		content: ["text", "text", "text", "text", "dbimgcaption"],
 	},
 	{
 		section: "time",
 		type: "article",
 		title: "time-6",
-		icon: "tsunami",
-		isCause: true,
+		icon: "sailing",
+		isCause: false,
 		content: ["text", "text", "text", "dbimgcaption"],
 	},
 	{
@@ -77,7 +77,7 @@ export const articles = [
 		title: "space-1",
 		icon: "construction",
 		isCause: true,
-		content: ["text", "text", "text", "text", "dbimgcaption"],
+		content: ["text", "text", "dbimgcaption", "text", "text"],
 	},
 	{
 		section: "space",
@@ -85,7 +85,7 @@ export const articles = [
 		title: "space-2",
 		icon: "location_on",
 		isCause: false,
-		content: ["text", "text", "text", "dbimgcaption"],
+		content: ["text", "text", "dbimgcaption", "text"],
 	},
 	{
 		section: "space",
@@ -141,7 +141,7 @@ export const articles = [
 		title: "space-9",
 		icon: "flare",
 		isCause: false,
-		content: ["text", "text", "text", "text", "dbimgcaption"],
+		content: ["text", "text", "text", "caption"],
 	},
 ];
 
