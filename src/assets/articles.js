@@ -5,7 +5,7 @@ export const articles = [
 		title: "overview-1",
 		icon: "adjust",
 		isCause: true,
-		content: ["text", "text", "text", "dbimgcaption"],
+		content: ["text", "text", "text", "img", "caption"],
 	},
 	{
 		section: "overview",
