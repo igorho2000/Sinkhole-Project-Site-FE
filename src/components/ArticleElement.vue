@@ -191,13 +191,13 @@ function handleNavigateToThis() {
 					<p>{{ t("credits.team-7") }}</p>
 				</div>
 				<a
-					href="https://projectonepremium.com"
+					href=""
 					target="_blank"
 					rel="noreferrer"
 					><span>north_east</span>{{ t("credits.data") }}</a
 				>
 				<a
-					href="https://projectonepremium.com"
+					href=""
 					target="_blank"
 					rel="noreferrer"
 					><span>north_east</span>GitHub</a
