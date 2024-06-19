@@ -141,7 +141,7 @@ export const articles = [
 		title: "space-9",
 		icon: "flare",
 		isCause: false,
-		content: ["text", "text", "text", "caption"],
+		content: ["text", "text", "text", "text"],
 	},
 ];
 
