@@ -185,7 +185,7 @@ function handleClickArticle(title) {
 			</RouterLink>
 			<!-- <button><span>home</span></button>
 			<button><span>home</span></button> -->
-			<TranslateButton :dark="true" />
+			<!-- <TranslateButton :dark="true" /> -->
 		</div>
 	</div>
 </template>

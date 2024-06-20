@@ -36,7 +36,7 @@ function handleClick() {
       />
     </div>
     <div class="homepage-translate">
-      <TranslateButton />
+      <!-- <TranslateButton /> -->
     </div>
     <Transition name="page">
       <div
