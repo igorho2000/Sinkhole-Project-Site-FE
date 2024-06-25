@@ -260,7 +260,7 @@ export const ch = {
 		"team-3": "介面設計＿＿＿＿＿Chu Chen",
 		"team-4": "文章編輯＿＿＿＿＿Chu Chen",
 		"team-5": "前端工程＿＿＿＿＿Igor Ho",
-		"team-6": "案件去重＿＿＿＿＿Iima Yu, Wayne Hung",
+		"team-6": "案件去重＿＿＿＿＿Iima Yu, Wayne Hong",
 		"team-7": "技術指導＿＿＿＿＿Iima Yu, Jack Huang",
 	},
 };
