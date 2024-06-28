@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This website showcases the potential causes of road collapse incidents using various types of open data. By browsing this website, you can gain a general understanding of the causes of most incidents and, if needed, further deepen your analysis.
+This website showcases potential causes of road collapse incidents using various types of open data. By browsing this website, you can gain a general understanding of the most common causes of these incidents and, if needed, conduct further in-depth analysis.
+
+For further analysis and additional materials, please refer to [here.](https://github.com/Chu-c-git/Sinkhole_cause_analysis).
 
 ## Contribute to this Site
 
