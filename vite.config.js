@@ -10,5 +10,5 @@ export default defineConfig({
 	server: {
 		watch: { usePolling: true },
 	},
-	// base: "/sinkhole",
+	base: "/sinkhole",
 });
